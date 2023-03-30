@@ -37,7 +37,16 @@ def shift_letter(letter, shift):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    for x in alphabet:
+        if x == letter:
+            a = alphabet.index(letter)
+            if (a+shift) < len(alphabet):
+                print(alphabet[a+shift])
+            else: 
+                print(alphabet[(a+shift)-len(alphabet)])
+        else:
+            print(" ")
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher. 
@@ -59,7 +68,20 @@ def caesar_cipher(message, shift):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    letters = list(message)
+    word=[]
+    for l in letters:
+        for a in alphabet:
+            if a == l:
+                indx = alphabet.index(l)
+                if (indx+shift) < len(alphabet):
+                    word.append(alphabet[indx+shift])
+                else:
+                    word.append(alphabet[(indx+shift) - len(alphabet)])
+
+    print("".join(word))
+            
 
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter. 
