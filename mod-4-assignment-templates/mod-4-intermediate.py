@@ -111,7 +111,19 @@ def shift_by_letter(letter, letter_shift):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    if letter == " ":
+        return " "
+    else:
+        # Define a dictionary to map letters to numbers and vice versa
+        letter_dict = {'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'M':12, 'N':13, 'O':14, 'P':15, 'Q':16, 'R':17, 'S':18, 'T':19, 'U':20, 'V':21, 'W':22, 'X':23, 'Y':24, 'Z':25}
+        # Convert both letters to numbers using the dictionary
+        letter_num = letter_dict[letter]
+        shift_num = letter_dict[letter_shift]
+        # Apply the shift and wrap around if necessary
+        shifted_num = (letter_num + shift_num) % 26
+        # Convert the shifted number back to a letter using the dictionary
+        shifted_letter = list(letter_dict.keys())[list(letter_dict.values()).index(shifted_num)]
+        return shifted_letter
 
 def vigenere_cipher(message, key):
     '''Vigenere Cipher. 
@@ -144,4 +156,17 @@ def vigenere_cipher(message, key):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    message = message.replace(" ", "")
+    key = (key * (len(message) // len(key) + 1))[:len(message)]
+    letter_dict = {'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'M':12, 'N':13, 'O':14, 'P':15, 'Q':16, 'R':17, 'S':18, 'T':19, 'U':20, 'V':21, 'W':22, 'X':23, 'Y':24, 'Z':25}
+    encrypted_message = ""
+    for i in range(len(message)):
+        letter_num = letter_dict[message[i]]
+        key_num = letter_dict[key[i]]
+        shifted_num = (letter_num + key_num) % 26
+        encrypted_letter = list(letter_dict.keys())[list(letter_dict.values()).index(shifted_num)]
+        encrypted_message += encrypted_letter
+    for i in range(len(message)):
+        if message[i] == " ":
+            encrypted_message = encrypted_message[:i] + " " + encrypted_message[i:]
+    return encrypted_message
