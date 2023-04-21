@@ -1,0 +1,127 @@
+/* Set a brownish-red background color for all pages */
+body {
+	background-color: #660303;
+}
+
+/* Set styles for header and navigation bar */
+header {
+	background-color: #ffef;
+	padding: 5px;
+	color: #8B0000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	max-width: 200px;
+	height: auto;
+	margin-right: 20px;
+}
+
+/* Set styles for the standard footer */
+footer {
+	background-color: #fff;
+	padding: 20px;
+	color: #8B0000;
+	text-align: center;
+}
+
+/* Set styles for the product table */
+table {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th {
+	background-color: #8B0000;
+	color: #fff;
+}
+
+/* Set styles for clickable product names */
+a.product-link {
+	color: #8B0000;
+	text-decoration: none;
+}
+
+a.product-link:hover {
+	text-decoration: underline;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: brownish-red; /* set the background color */
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 10px;
+  color: white; /* set the text color */
+  text-decoration: none;
+}
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

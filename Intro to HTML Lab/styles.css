@@ -1,0 +1,55 @@
+/* Set a brownish-red background color for all pages */
+body {
+	background-color: #8B0000;
+}
+
+/* Set styles for header and navigation bar */
+header {
+	background-color: #fff;
+	padding: 20px;
+	color: #8B0000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	max-width: 200px;
+	height: auto;
+	margin-right: 20px;
+}
+
+/* Set styles for the standard footer */
+footer {
+	background-color: #fff;
+	padding: 20px;
+	color: #8B0000;
+	text-align: center;
+}
+
+/* Set styles for the product table */
+table {
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th {
+	background-color: #8B0000;
+	color: #fff;
+}
+
+/* Set styles for clickable product names */
+a.product-link {
+	color: #8B0000;
+	text-decoration: none;
+}
+
+a.product-link:hover {
+	text-decoration: underline;
+}
